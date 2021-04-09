@@ -11,6 +11,9 @@ var app = new Vue ({
     album: function () {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
         this.disks = response.data.response;
+        this.disks.sort((a,b) =>{
+          return a.year - b.year
+        } )
         });
     }
   },
